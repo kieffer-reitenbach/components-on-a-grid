@@ -22,6 +22,12 @@ header {
 body {
   background-color: #f2f1ed;
   margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "banner banner"
+    "main main";
 }
 
 li, h2 {
@@ -30,6 +36,9 @@ li, h2 {
 
 .logo {
   width: 14rem;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 li {
@@ -43,4 +52,29 @@ a {
 
 h2 {
   color: #30658d;
+}
+
+.pano {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+nav {
+  grid-column: 2 / -1;
+  grid-row: 1;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  grid-area: main;
+  grid-column: 1/ -1;
+  grid-row: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
